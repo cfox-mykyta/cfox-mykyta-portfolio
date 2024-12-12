@@ -1,10 +1,36 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+
+const Clock: React.FC = () => {
+  const [time, setTime] = useState<string>('');
+
+  useEffect(() => {
+    const updateClock = () => {
+      const kyivTime = new Date().toLocaleTimeString('uk-UA', {
+        timeZone: 'Europe/Kyiv',
+        hour12: false,
+      });
+      setTime(kyivTime);
+    };
+
+    updateClock(); // Update immediately
+    const intervalId = setInterval(updateClock, 1000); // Update every second
+
+    return () => clearInterval(intervalId); // Clean up interval on unmount
+  }, []);
+
+  return (
+    <h1 className="text-9xl font-extrabold tracking-widest" style={{ fontFamily: 'Roboto Mono, monospace' }}>
+      {time}
+    </h1>
+  );
+};
 
 const Page: React.FC = () => {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-3xl font-bold">Вітаю на моєму портфоліо!</h1>
-      <p className="mt-4">Це приклад сторінки, яка використовує Tailwind CSS та TypeScript.</p>
+    <main>
+      <Clock />
     </main>
   );
 };

@@ -1,21 +1,27 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import '../styles/globals.css';
 
-type LayoutProps = {
-  children: ReactNode;
+// Мета-дані для сайту
+export const metadata = {
+  title: 'My Portfolio',
 };
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <html lang="en">
-        <body className="min-h-screen flex flex-col">
-          {children}
-        </body>
-      </html>
-    </>
+    <html lang="en">
+      <head>
+        {/* Підключення шрифтів */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-screen flex flex-col">
+        {children}
+      </body>
+    </html>
   );
-};
+}
 
-export default Layout;
+
 
