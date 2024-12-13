@@ -3,9 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-black text-gray-300 flex items-center justify-center h-screen;
-  margin: 0;
-  font-family: Arial, sans-serif;
+  
 }
-
-
