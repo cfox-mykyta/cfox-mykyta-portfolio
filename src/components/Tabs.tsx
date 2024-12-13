@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 const Tabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>('Home'); // За замовчуванням відкривається вкладка "News"
+  const [activeTab, setActiveTab] = useState<string>('News'); // За замовчуванням відкривається вкладка "News"
 
   const openPage = (tabName: string) => {
     setActiveTab(tabName); // Оновлення активної вкладки
@@ -12,7 +12,7 @@ const Tabs: React.FC = () => {
   return (
     <div className="flex flex-col h-screen"> {/* Задаємо висоту на весь екран */}
       {/* Tab buttons */}
-      <div className="flex">
+      <div className="flex flex-col md:flex-row"> {/* Мобільні версії вертикальні */}
         <button
           onClick={() => openPage('Home')}
           className={`tablink ${activeTab === 'Home' ? 'bg-red-500' : 'bg-gray-700'} text-white flex-1 py-4 text-lg`}
