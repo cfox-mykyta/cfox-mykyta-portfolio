@@ -1,4 +1,4 @@
-'use client';
+'use client'; // Для клієнтського рендеру
 
 import React, { useState } from 'react';
 
@@ -10,14 +10,13 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <nav className="border-gray-200 bg-gray-900 dark:bg-gray-800 sm:bg-blue-500">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-300 transition-transform duration-300 transform group-hover:scale-110 group-hover:text-blue-500 animate-fade-in">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap text-white dark:text-gray-300 transition-transform duration-300 transform group-hover:scale-110 group-hover:text-blue-500 animate-fade-in">
             cfox
           </span>
         </a>
-
         <button
           onClick={toggleMenu}
           type="button"
@@ -42,31 +41,6 @@ const Navigation: React.FC = () => {
             />
           </svg>
         </button>
-
-        <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full`} id="navbar-hamburger">
-          <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 gap-1">
-            <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white" aria-current="page">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
-                Blog
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
   );

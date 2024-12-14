@@ -1,5 +1,6 @@
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
+import React from 'react';
+import Navigation from '../components/Navigation';  // Імпортуємо компонент Navigation
+import Footer from '../components/Footer';  // Імпортуємо компонент Footer
 
 const Page: React.FC = () => {
   return (
