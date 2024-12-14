@@ -16,7 +16,6 @@ const Navigation: React.FC = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-gray-300 transition-transform duration-300 transform group-hover:scale-110 group-hover:text-blue-500 animate-fade-in">
             cfox
           </span>
-
         </a>
 
         <button
@@ -43,41 +42,26 @@ const Navigation: React.FC = () => {
             />
           </svg>
         </button>
-        <div
-          className={`${isMenuOpen ? 'block' : 'hidden'} w-full`}
-          id="navbar-hamburger"
-        >
+
+        <div className={`${isMenuOpen ? 'block' : 'hidden'} w-full`} id="navbar-hamburger">
           <ul className="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700 gap-1">
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-                aria-current="page"
-              >
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white" aria-current="page">
                 Home
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
                 Blog
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
                 Portfolio
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-              >
+              <a href="#" className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
                 Contact
               </a>
             </li>
