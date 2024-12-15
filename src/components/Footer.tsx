@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
@@ -9,11 +9,9 @@ const Footer: React.FC = () => {
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Логотип */}
-          <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
-            <span className="text-2xl font-semibold text-gray-300 group-hover:text-indigo-500 transition">
-              cfox
-            </span>
-          </a>
+          <div className="text-2xl font-semibold text-gray-300">
+            <span className="group-hover:text-indigo-500 transition">cfox</span>
+          </div>
 
           {/* Соціальні мережі */}
           <div className="flex space-x-6 text-xl">
@@ -43,10 +41,10 @@ const Footer: React.FC = () => {
 
           {/* Контактна інформація */}
           <div className="text-sm text-gray-300">
-            <p className="cursor-default">
+            <p className="hover:text-indigo-500 transition">
               Phone: +1 (234) 567-890
             </p>
-            <p className="cursor-default">Working Hours: 9:00 AM - 6:00 PM</p>
+            <p className="hover:text-indigo-500 transition">Working Hours: 9:00 AM - 6:00 PM</p>
           </div>
         </div>
 
@@ -94,4 +92,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
