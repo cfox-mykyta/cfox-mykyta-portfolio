@@ -22,53 +22,53 @@ const Header: React.FC = () => {
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         {/* Логотип */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
-          <span className="font-bold text-gray-300 group-hover:text-orange-500 transition">
+          <span className="text-2xl font-semibold text-gray-300 group-hover:text-indigo-500 transition">
             cfox
           </span>
         </a>
 
         {/* Навігація */}
-        <nav className={`hidden md:flex space-x-6 text-sm font-semibold`}>
+        <nav className={`hidden md:flex space-x-8 text-lg font-semibold`}>
           <a
             href="#home"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             Home
           </a>
           <a
             href="#skills"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             Skills
           </a>
           <a
             href="#portfolio"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             Portfolio
           </a>
           <a
             href="#contacts"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             Contacts
           </a>
         </nav>
 
         {/* Соцмережі */}
-        <div className="hidden md:flex space-x-4 text-lg">
+        <div className="hidden md:flex space-x-6 text-xl">
           <a
             href="https://github.com/cfox-mykyta"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             <FaGithub />
           </a>
 
           <a
             href="mailto:your-email@gmail.com"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             <FaEnvelope />
           </a>
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             href="https://linkedin.com/in/your-linkedin"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
           >
             <FaLinkedin />
           </a>
@@ -84,22 +84,23 @@ const Header: React.FC = () => {
 
         {/* Кнопка для мобільного меню */}
         <button
-          className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition"
+          className="md:hidden p-2 rounded-lg transition"
           aria-label="Toggle navigation"
           onClick={toggleMenu} // Встановлення функції для перемикання
         >
+          {/* Іконка меню: три смужки або хрестик */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className="w-6 h-6 text-gray-300 hover:text-orange-500 transition"
+            className={`w-8 h-8 text-gray-300 hover:text-indigo-500 transition-transform ${isMenuOpen ? 'rotate-90' : ''}`}
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
+              d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} // Зміна іконки
             />
           </svg>
         </button>
@@ -111,31 +112,31 @@ const Header: React.FC = () => {
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden bg-zinc-700`}
       >
-        <nav className="flex flex-col space-y-4 p-4">
+        <nav className="flex flex-col space-y-6 p-6 text-lg font-semibold">
           <a
             href="#home"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
             onClick={closeMenu} // Закрити меню після натискання
           >
             Home
           </a>
           <a
             href="#skills"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
             onClick={closeMenu}
           >
             Skills
           </a>
           <a
             href="#portfolio"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
             onClick={closeMenu}
           >
             Portfolio
           </a>
           <a
             href="#contacts"
-            className="text-gray-300 hover:text-orange-500 transition"
+            className="text-gray-300 hover:text-indigo-500 transition"
             onClick={closeMenu}
           >
             Contacts
