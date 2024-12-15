@@ -12,6 +12,11 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Функція для закриття меню після вибору
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="bg-zinc-800 text-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
@@ -23,7 +28,7 @@ const Header: React.FC = () => {
         </a>
 
         {/* Навігація */}
-        <nav className={`md:flex space-x-6 text-sm font-semibold ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <nav className={`hidden md:flex space-x-6 text-sm font-semibold`}>
           <a
             href="#home"
             className="text-gray-300 hover:text-orange-500 transition"
@@ -53,7 +58,7 @@ const Header: React.FC = () => {
         {/* Соцмережі */}
         <div className="hidden md:flex space-x-4 text-lg">
           <a
-            href="https://github.com/your-github"
+            href="https://github.com/cfox-mykyta"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-orange-500 transition"
@@ -101,29 +106,37 @@ const Header: React.FC = () => {
       </div>
 
       {/* Мобільне меню */}
-      <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
-        <nav className="flex flex-col space-y-4 p-4 bg-zinc-700">
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out transform ${
+          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+        } overflow-hidden bg-zinc-700`}
+      >
+        <nav className="flex flex-col space-y-4 p-4">
           <a
             href="#home"
             className="text-gray-300 hover:text-orange-500 transition"
+            onClick={closeMenu} // Закрити меню після натискання
           >
             Home
           </a>
           <a
             href="#skills"
             className="text-gray-300 hover:text-orange-500 transition"
+            onClick={closeMenu}
           >
             Skills
           </a>
           <a
             href="#portfolio"
             className="text-gray-300 hover:text-orange-500 transition"
+            onClick={closeMenu}
           >
             Portfolio
           </a>
           <a
             href="#contacts"
             className="text-gray-300 hover:text-orange-500 transition"
+            onClick={closeMenu}
           >
             Contacts
           </a>
