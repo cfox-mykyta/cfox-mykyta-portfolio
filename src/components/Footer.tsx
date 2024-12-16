@@ -1,94 +1,80 @@
 'use client';
 
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import React, { useState } from 'react';
 
 const Footer: React.FC = () => {
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPhoneNumber(event.target.value);
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    setIsSubmitted(true);
+    setPhoneNumber('');
+  };
+
   return (
-    <footer className="bg-zinc-800 text-white py-8 mt-12">
-      <div className="max-w-screen-xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-          {/* Логотип */}
-          <div className="text-2xl font-semibold text-gray-300">
-            <span className="group-hover:text-indigo-500 transition">cfox</span>
-          </div>
-
-          {/* Соціальні мережі */}
-          <div className="flex space-x-6 text-xl">
-            <a
-              href="https://github.com/cfox-mykyta"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-indigo-500 transition"
-            >
-              <FaGithub />
-            </a>
-            <a
-              href="mailto:your-email@gmail.com"
-              className="text-gray-300 hover:text-indigo-500 transition"
-            >
-              <FaEnvelope />
-            </a>
-            <a
-              href="https://linkedin.com/in/your-linkedin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-indigo-500 transition"
-            >
-              <FaLinkedin />
-            </a>
-          </div>
-
-          {/* Контактна інформація */}
-          <div className="text-sm text-gray-300">
-            <p className="hover:text-indigo-500 transition">
-              Phone: +1 (234) 567-890
-            </p>
-            <p className="hover:text-indigo-500 transition">Working Hours: 9:00 AM - 6:00 PM</p>
-          </div>
+    <footer className="bg-zinc-800 text-gray-300 py-6">
+      <div className="max-w-screen-xl mx-auto px-6 sm:px-4 flex flex-col sm:flex-row justify-between items-center space-y-6 sm:space-y-0 sm:space-x-12">
+        {/* Контактна інформація */}
+        <div className="text-sm text-gray-400 flex flex-col items-center sm:items-start cursor-default">
+          <p className="cursor-default">
+            Phone: <a href="tel:+1234567890" aria-label="Call us at +1 (234) 567-890">+1 (234) 567-890</a>
+          </p>
+          <p className="cursor-default">
+            Email: <a href="mailto:your-email@gmail.com" aria-label="Email us at your-email@gmail.com">your-email@gmail.com</a>
+          </p>
         </div>
 
-        {/* Форма для надсилання повідомлення */}
-        <div className="mt-8">
-          <h3 className="text-xl font-semibold text-gray-300 mb-4">Send a Message</h3>
-          <form
-            action="mailto:your-email@gmail.com"
-            method="post"
-            encType="text/plain"
-            className="flex flex-col space-y-4"
-          >
+        {/* Форма зворотного зв'язку */}
+        <div className="flex flex-col items-center sm:items-start sm:w-1/3 space-y-4 sm:space-y-0">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full space-y-4 sm:space-y-0 sm:space-x-4">
             <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
+              type="tel"
+              placeholder="Your Phone Number"
+              value={phoneNumber}
+              onChange={handlePhoneChange}
               required
-              className="p-3 text-gray-700 rounded-md focus:outline-none"
+              className="p-3 w-full sm:w-2/3 text-gray-700 rounded-md focus:outline-none text-sm"
             />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="p-3 text-gray-700 rounded-md focus:outline-none"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              rows={4}
-              required
-              className="p-3 text-gray-700 rounded-md focus:outline-none"
-            ></textarea>
             <button
               type="submit"
-              className="bg-indigo-500 text-white p-3 rounded-md hover:bg-indigo-600 transition"
+              className="bg-sky-500 text-white p-3 rounded-md hover:bg-sky-600 transition w-full sm:w-1/3 text-sm"
             >
-              Send Message
+              {isSubmitted ? 'Sent!' : 'Send'}
             </button>
           </form>
+          {isSubmitted && <span className="text-sm text-green-500 mt-2">Thank you! We will contact you soon.</span>}
         </div>
+
+        {/* Графік роботи */}
+        <div className="text-sm text-gray-400 flex flex-col items-center sm:items-start cursor-default">
+          <p className="cursor-default">
+            Working Hours: 9:00 AM - 6:00 PM
+          </p>
+          <p className="cursor-default">
+            Monday - Friday
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 border-t border-zinc-700 pt-4 text-center text-xs text-gray-400">
+        © {new Date().getFullYear()} cfox. All rights reserved.
       </div>
     </footer>
   );
 };
 
 export default Footer;
+
+
+
+
+
+
+
+
+

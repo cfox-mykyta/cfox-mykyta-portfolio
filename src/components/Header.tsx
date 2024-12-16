@@ -21,54 +21,54 @@ const Header: React.FC = () => {
     <header className="bg-zinc-800 text-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         {/* Логотип */}
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
-          <span className="text-2xl font-semibold text-gray-300 group-hover:text-indigo-500 transition">
-            cfox
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group text-lg">
+          <span className="font-semibold text-gray-300 hover:text-sky-500 transition">
+            c-fox
           </span>
         </a>
 
         {/* Навігація */}
-        <nav className={`hidden md:flex space-x-8 text-lg font-semibold`}>
+        <nav className={`hidden md:flex space-x-8 font-semibold`}>
           <a
             href="#home"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
           >
             Home
           </a>
           <a
             href="#skills"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
           >
             Skills
           </a>
           <a
             href="#portfolio"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
           >
             Portfolio
           </a>
           <a
             href="#contacts"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
           >
             Contacts
           </a>
         </nav>
 
         {/* Соцмережі */}
-        <div className="hidden md:flex space-x-6 text-xl">
+        <div className="hidden md:flex space-x-6 text-lg">
           <a
             href="https://github.com/cfox-mykyta"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-gray-500 transition"
           >
             <FaGithub />
           </a>
 
           <a
             href="mailto:your-email@gmail.com"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-rose-600 transition"
           >
             <FaEnvelope />
           </a>
@@ -76,7 +76,7 @@ const Header: React.FC = () => {
             href="https://linkedin.com/in/your-linkedin"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
           >
             <FaLinkedin />
           </a>
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            className={`w-8 h-8 text-gray-300 hover:text-indigo-500 transition-transform ${isMenuOpen ? 'rotate-90' : ''}`}
+            className={`w-6 h-6 text-gray-300 transition-transform ${isMenuOpen ? 'rotate-90' : ''}`}
           >
             <path
               strokeLinecap="round"
@@ -112,31 +112,31 @@ const Header: React.FC = () => {
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         } overflow-hidden bg-zinc-700`}
       >
-        <nav className="flex flex-col space-y-6 p-6 text-lg font-semibold">
+        <nav className="flex flex-col space-y-6 p-6 font-semibold">
           <a
             href="#home"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
             onClick={closeMenu} // Закрити меню після натискання
           >
             Home
           </a>
           <a
             href="#skills"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
             onClick={closeMenu}
           >
             Skills
           </a>
           <a
             href="#portfolio"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
             onClick={closeMenu}
           >
             Portfolio
           </a>
           <a
             href="#contacts"
-            className="text-gray-300 hover:text-indigo-500 transition"
+            className="text-gray-300 hover:text-sky-500 transition"
             onClick={closeMenu}
           >
             Contacts
