@@ -3,9 +3,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-// Динамічний імпорт для компонента Particles
-const Particles = dynamic(() => import('react-tsparticles'), { ssr: false });
-
 const Hero: React.FC = () => {
     return (
         <section
