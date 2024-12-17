@@ -1,7 +1,6 @@
 'use client'; // Це робить компонент клієнтським
 
 import React from 'react';
-import dynamic from 'next/dynamic';
 
 const Hero: React.FC = () => {
     return (
@@ -21,7 +20,7 @@ const Hero: React.FC = () => {
                 <div className="flex flex-col sm:flex-row sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
                     <a
                         href="#portfolio"
-                        className="bg-gray-700 text-gray-300 px-6 py-3 rounded-lg shadow-md hover:bg-gray-600 transition w-full sm:w-auto"
+                        className="bg-zinc-300 text-zinc-900 px-6 py-3 rounded-lg shadow-md hover:bg-zinc-600 hover:text-zinc-300 transition w-full sm:w-auto"
                     >
                         See My Work
                     </a>
