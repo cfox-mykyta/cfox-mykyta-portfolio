@@ -3,8 +3,13 @@
 import React, { useState } from 'react';
 
 const Footer: React.FC = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [contactName, setContactName] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setContactName(event.target.value);
+  };
 
   const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(event.target.value);
@@ -12,7 +17,10 @@ const Footer: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    // Here, you would typically send the data to a server
     setIsSubmitted(true);
+    // Reset the fields after submission
+    setContactName('');
     setPhoneNumber('');
   };
 
@@ -32,6 +40,14 @@ const Footer: React.FC = () => {
         {/* Форма зворотного зв'язку */}
         <div className="flex flex-col items-center sm:items-start sm:w-1/3 space-y-4 sm:space-y-0">
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full space-y-4 sm:space-y-0 sm:space-x-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={contactName}
+              onChange={handleNameChange}
+              required
+              className="p-3 w-full sm:w-2/3 text-gray-700 rounded-md focus:outline-none text-sm"
+            />
             <input
               type="tel"
               placeholder="Your Phone Number"
@@ -69,6 +85,7 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+
 
 
 

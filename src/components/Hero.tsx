@@ -1,14 +1,19 @@
-'use client';
+'use client'; // Це робить компонент клієнтським
 
 import React from 'react';
+import dynamic from 'next/dynamic';
+
+// Динамічний імпорт для компонента Particles
+const Particles = dynamic(() => import('react-tsparticles'), { ssr: false });
 
 const Hero: React.FC = () => {
     return (
         <section
             id="home"
-            className="bg-zinc-900 text-gray-300 flex items-center justify-center min-h-screen px-6 md:px-4"
+            className="bg-zinc-900 text-gray-300 flex items-center justify-center min-h-screen px-6 md:px-4 relative overflow-hidden"
         >
-            <div className="max-w-4xl text-center">
+            <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-700 animate-gradient"></div> {/* Анімація градієнта */}
+            <div className="max-w-4xl text-center relative z-10">
                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-sky-500 mb-6">
                     Welcome to My Portfolio
                 </h1>
@@ -36,4 +41,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-
