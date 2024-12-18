@@ -2,57 +2,43 @@
 
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Header: React.FC = () => {
-  // Стейт для керування видимістю мобільного меню
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Функція для перемикання видимості меню
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Функція для закриття меню після вибору
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  const sections = [
+    { id: 'home', label: 'Home', href: '/' },
+    { id: 'skills', label: 'Skills', href: '/soft-skills' },
+    { id: 'portfolio', label: 'Portfolio', href: '#portfolio' },
+    { id: 'contacts', label: 'Contacts', href: '#contacts' },
+  ];
 
   return (
     <header className="bg-zinc-800 text-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         {/* Логотип */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group text-lg">
-          <span className="font-semibold text-gray-300 hover:text-sky-500 transition">
+          <span className="font-semibold text-gray-300 hover:text-sky-500 transition tracking-widest">
             c-fox
           </span>
         </a>
 
         {/* Навігація */}
-        <nav className={`hidden md:flex space-x-8 font-semibold`}>
-          <a
-            href="#home"
-            className="text-gray-300 hover:text-sky-500 transition"
-          >
-            Home
-          </a>
-          <a
-            href="#skills"
-            className="text-gray-300 hover:text-sky-500 transition"
-          >
-            Skills
-          </a>
-          <a
-            href="#portfolio"
-            className="text-gray-300 hover:text-sky-500 transition"
-          >
-            Portfolio
-          </a>
-          <a
-            href="#contacts"
-            className="text-gray-300 hover:text-sky-500 transition"
-          >
-            Contacts
-          </a>
+        <nav className="hidden md:flex space-x-8 font-semibold">
+          {sections.map(({ id, label, href }) => (
+            <Link key={id} href={href} className="text-gray-300 hover:text-sky-500 transition">
+              {label}
+            </Link>
+          ))}
         </nav>
 
         {/* Соцмережі */}
@@ -62,13 +48,14 @@ const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-gray-500 transition"
+            aria-label="GitHub"
           >
             <FaGithub />
           </a>
-
           <a
             href="mailto:your-email@gmail.com"
             className="text-gray-300 hover:text-rose-600 transition"
+            aria-label="Email"
           >
             <FaEnvelope />
           </a>
@@ -77,6 +64,7 @@ const Header: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-sky-500 transition"
+            aria-label="LinkedIn"
           >
             <FaLinkedin />
           </a>
@@ -84,11 +72,10 @@ const Header: React.FC = () => {
 
         {/* Кнопка для мобільного меню */}
         <button
-          className="md:hidden p-2 rounded-lg transition"
+          className="md:hidden p-2 rounded-lg hover:bg-zinc-700 transition"
           aria-label="Toggle navigation"
-          onClick={toggleMenu} // Встановлення функції для перемикання
+          onClick={toggleMenu}
         >
-          {/* Іконка меню: три смужки або хрестик */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -100,7 +87,7 @@ const Header: React.FC = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth="2"
-              d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} // Зміна іконки
+              d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
             />
           </svg>
         </button>
@@ -108,39 +95,20 @@ const Header: React.FC = () => {
 
       {/* Мобільне меню */}
       <div
-        className={`md:hidden transition-all duration-300 ease-in-out transform ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden bg-zinc-700`}
+        className={`md:hidden transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          } overflow-hidden bg-zinc-700`}
       >
         <nav className="flex flex-col space-y-6 p-6 font-semibold">
-          <a
-            href="#home"
-            className="text-gray-300 hover:text-sky-500 transition"
-            onClick={closeMenu} // Закрити меню після натискання
-          >
-            Home
-          </a>
-          <a
-            href="#skills"
-            className="text-gray-300 hover:text-sky-500 transition"
-            onClick={closeMenu}
-          >
-            Skills
-          </a>
-          <a
-            href="#portfolio"
-            className="text-gray-300 hover:text-sky-500 transition"
-            onClick={closeMenu}
-          >
-            Portfolio
-          </a>
-          <a
-            href="#contacts"
-            className="text-gray-300 hover:text-sky-500 transition"
-            onClick={closeMenu}
-          >
-            Contacts
-          </a>
+          {sections.map(({ id, label, href }) => (
+            <Link
+              key={id}
+              href={href}
+              className="text-gray-300 hover:text-sky-500 transition"
+              onClick={closeMenu}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>
