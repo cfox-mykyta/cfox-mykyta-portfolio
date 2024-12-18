@@ -74,7 +74,7 @@ const SoftSkills: React.FC = () => {
           <h3 className="text-3xl font-semibold text-center mb-8 text-white">Сертифікати по технологіям</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             {skills.map((skill, index) => {
-              const percentage = calculatePercentage(skill.score, skill.maxScore);
+              const percentage = calculatePercentage(skill.score, skill.maxScore); // Використовуємо maxScore для розрахунку
               return (
                 <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-zinc-700 transition duration-300">
                   <h3 className="text-xl font-semibold text-white">{skill.title}</h3>
@@ -98,7 +98,7 @@ const SoftSkills: React.FC = () => {
           <h3 className="text-3xl font-semibold text-center mb-8 text-white">Дипломи по спеціальностям</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {certificates.map((certificate, index) => {
-              const percentage = calculatePercentage(certificate.score, certificate.maxScore);
+              const percentage = calculatePercentage(certificate.score, certificate.maxScore); // Використовуємо maxScore для розрахунку
               return (
                 <div key={index} className="bg-zinc-800 p-6 rounded-lg shadow-md hover:shadow-lg hover:bg-zinc-700 transition duration-300">
                   <h3 className="text-xl font-semibold text-white">{certificate.title}</h3>
