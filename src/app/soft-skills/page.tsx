@@ -7,7 +7,7 @@ import Footer from '../../components/Footer';
 interface Skill {
   title: string;
   score: string;
-  maxScore: number;
+  maxScore: number; // Тепер використовуємо maxScore
   status: string;
 }
 
@@ -15,7 +15,7 @@ interface Skill {
 interface Certificate {
   title: string;
   score: string;
-  maxScore: number;
+  maxScore: number; // Тепер використовуємо maxScore
   status: string;
 }
 
