@@ -26,10 +26,13 @@ const Header: React.FC = () => {
     <header className="bg-zinc-800 text-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         {/* Логотип */}
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group text-lg">
-          <span className="font-semibold text-gray-300 hover:text-sky-500 transition tracking-widest">
-            c-fox
-          </span>
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
+          {/* Замість тексту додамо зображення */}
+          <img
+            src="/assets/logo.png"
+            alt="c-fox logo"
+            className="h-8 w-auto"
+          />
         </a>
 
         {/* Навігація */}

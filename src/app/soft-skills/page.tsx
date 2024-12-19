@@ -57,11 +57,11 @@ const SoftSkills: React.FC = () => {
 
   // Список сертифікатів
   const certificates: Certificate[] = [
-    { title: 'HTML Coder', score: '35/36', maxScore: 36, status: 'ОТРИМАНО', url: 'https://example.com/html-coder' },
     { title: 'Frontend Developer', score: '50/56', maxScore: 56, status: 'ОТРИМАНО', url: 'https://example.com/frontend-developer' },
-    { title: 'JavaScript Developer', score: '21/26', maxScore: 26, status: 'ОТРИМАНО', url: 'https://example.com/javascript-developer' },
-    { title: 'Angular Developer', score: '19/19', maxScore: 19, status: 'ОТРИМАНО', url: 'https://example.com/angular-developer' },
     { title: 'React Developer', score: '13/13', maxScore: 13, status: 'ОТРИМАНО', url: 'https://example.com/react-developer' },
+    { title: 'Angular Developer', score: '19/19', maxScore: 19, status: 'ОТРИМАНО', url: 'https://example.com/angular-developer' },
+    { title: 'JavaScript Developer', score: '21/26', maxScore: 26, status: 'ОТРИМАНО', url: 'https://example.com/javascript-developer' },
+    { title: 'HTML Coder', score: '35/36', maxScore: 36, status: 'ОТРИМАНО', url: 'https://example.com/html-coder' },
   ];
 
   return (
