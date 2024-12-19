@@ -11,7 +11,7 @@ const Contacts: React.FC = () => {
                 <div className="text-center p-6 max-w-lg">
                     <h1 className="text-4xl font-bold mb-6">Get in Touch</h1>
                     <p className="text-lg text-gray-400 mb-4">
-                        If you'd like to work together or have any questions, feel free to reach out!
+                        If you&apos;d like to work together or have any questions, feel free to reach out!
                     </p>
                     <div className="space-y-4">
                         <a
@@ -45,19 +45,19 @@ const Contacts: React.FC = () => {
                     <div className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
                         <div className="bg-zinc-700 p-6 rounded-lg shadow-md">
                             <p className="text-lg italic text-gray-300">
-                                "An outstanding developer! Always delivers projects on time with impeccable quality."
+                                &quot;An outstanding developer! Always delivers projects on time with impeccable quality.&quot;
                             </p>
                             <span className="block mt-4 text-right text-sky-500 font-semibold">— Client A</span>
                         </div>
                         <div className="bg-zinc-700 p-6 rounded-lg shadow-md">
                             <p className="text-lg italic text-gray-300">
-                                "Working with this professional was a pleasure. Great communication and skills!"
+                                &quot;Working with this professional was a pleasure. Great communication and skills!&quot;
                             </p>
                             <span className="block mt-4 text-right text-sky-500 font-semibold">— Client B</span>
                         </div>
                         <div className="bg-zinc-700 p-6 rounded-lg shadow-md">
                             <p className="text-lg italic text-gray-300">
-                                "The best experience I've had with a developer. Highly recommended!"
+                                &quot;The best experience I&apos;ve had with a developer. Highly recommended!&quot;
                             </p>
                             <span className="block mt-4 text-right text-sky-500 font-semibold">— Client C</span>
                         </div>
