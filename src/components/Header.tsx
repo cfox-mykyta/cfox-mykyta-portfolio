@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     { id: 'home', label: 'Home', href: '/' },
     { id: 'skills', label: 'Skills', href: '/soft-skills' },
     { id: 'portfolio', label: 'Portfolio', href: '#portfolio' },
-    { id: 'contacts', label: 'Contacts', href: '#contacts' },
+    { id: 'contacts', label: 'Contacts', href: '/contacts' },
   ];
 
   return (
