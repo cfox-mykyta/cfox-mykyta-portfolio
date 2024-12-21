@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   const sections = [
     { id: 'home', label: 'Home', href: '/' },
     { id: 'skills', label: 'Skills', href: '/soft-skills' },
-    { id: 'portfolio', label: 'Portfolio', href: '#portfolio' },
+    { id: 'portfolio', label: 'Portfolio', href: '/portfolio' },
     { id: 'contacts', label: 'Contacts', href: '/contacts' },
   ];
 
