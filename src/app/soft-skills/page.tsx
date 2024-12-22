@@ -27,7 +27,7 @@ const ProgressBar: React.FC<{ score: string }> = ({ score }) => {
       <div className="text-sm text-gray-400">Progress: {percentage.toFixed(2)}%</div>
       <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
         <div
-          className="bg-gradient-to-r from-blue-400 to-sky-500 h-2 rounded-full transition-all"
+          className="bg-gradient-to-r from-sky-500 to-sky-400 h-2 rounded-full transition-all"
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
