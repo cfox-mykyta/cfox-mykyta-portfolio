@@ -1,22 +1,23 @@
 import React from 'react';
-import Head from 'next/head'; // Імпорт Head
+import Head from 'next/head'; // Імпортуємо компонент Head
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const Contacts: React.FC = () => {
     return (
         <>
-            {/* Head для додавання метаданих */}
+            {/* Додаємо мета-дані для сторінки */}
             <Head>
                 <title>Contacts | My Portfolio</title>
-                <meta name="description" content="Get in touch with me for collaborations, questions, or opportunities. Check out my email, GitHub, and LinkedIn links here." />
+                <meta
+                    name="description"
+                    content="Get in touch with me for collaborations, questions, or opportunities. Check out my email, GitHub, and LinkedIn links here."
+                />
                 <meta name="keywords" content="Contacts, Portfolio, Email, GitHub, LinkedIn" />
                 <meta name="author" content="Mykyta" />
-                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Header />
             <div className="min-h-screen bg-zinc-900 text-white flex flex-col items-center justify-center">
                 {/* Контактна інформація */}
                 <div className="text-center p-6 max-w-lg">
@@ -75,7 +76,6 @@ const Contacts: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     );
 };

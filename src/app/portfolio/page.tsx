@@ -46,7 +46,6 @@ const Portfolio: React.FC = () => {
 
     return (
         <div className="bg-zinc-900 text-white mt-12">
-            <Header />
             <div className="max-w-screen-xl mx-auto py-12 px-6">
                 <h1 className="text-4xl font-bold text-center text-sky-500 mb-12">Portfolio</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -74,7 +73,6 @@ const Portfolio: React.FC = () => {
                     ))}
                 </div>
             </div>
-            <Footer />
         </div>
     );
 };
