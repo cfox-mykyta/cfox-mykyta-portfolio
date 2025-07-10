@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image'; // додайте імпорт
 
 const Portfolio: React.FC = () => {
     const projects = [
@@ -52,9 +53,11 @@ const Portfolio: React.FC = () => {
                             key={index}
                             className="bg-zinc-800 p-6 rounded-lg shadow-md hover:shadow-lg transition"
                         >
-                            <img
+                            <Image
                                 src={project.image}
                                 alt={project.title}
+                                width={400}
+                                height={160}
                                 className="h-40 w-full object-cover rounded-md mb-4"
                             />
                             <h3 className="text-2xl font-semibold text-white">{project.title}</h3>

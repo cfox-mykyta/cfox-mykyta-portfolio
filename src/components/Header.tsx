@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,10 +29,13 @@ const Header: React.FC = () => {
         {/* Логотип */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
           {/* Замість тексту додамо зображення */}
-          <img
+          <Image
             src="/assets/logo.png"
             alt="c-fox logo"
+            width={32}
+            height={32}
             className="h-8 w-auto"
+            priority
           />
         </a>
 
