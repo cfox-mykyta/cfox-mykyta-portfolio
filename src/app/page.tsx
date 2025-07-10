@@ -8,8 +8,10 @@ const Page: React.FC = () => {
   return (
     <>
       <div className='bg-zinc-900'>
+        <Header />
         <Hero />
         <Motivation />
+        <Footer />
       </div>
     </>
   );
