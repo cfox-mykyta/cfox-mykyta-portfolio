@@ -1,6 +1,4 @@
 import React from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 
 interface Skill {
   title: string;
@@ -68,7 +66,6 @@ const SoftSkills: React.FC = () => {
 
   return (
     <>
-      <Header />
       <section className="bg-zinc-900 text-gray-300 py-12 px-6 min-h-screen mt-12">
         <div className="max-w-screen-xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-8 text-white">
@@ -120,7 +117,6 @@ const SoftSkills: React.FC = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };
