@@ -18,12 +18,12 @@ const Hero: React.FC = () => {
                     responsive, and user-friendly websites. Explore my work and skills below.
                 </p>
                 <div className="flex flex-col sm:flex-row sm:justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <link
-                        href="#portfolio"
+                    <Link
+                        href="/portfolio"
                         className="bg-zinc-600 text-zinc-100 px-6 py-3 rounded-lg shadow-md hover:bg-zinc-700 hover:text-zinc-200 transition w-full sm:w-auto"
                     >
                         See My Work
-                    </link>
+                    </Link>
                     <Link
                         href="/soft-skills"  // Перехід на сторінку скілів
                         className="bg-sky-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-sky-600 transition w-full sm:w-auto"
