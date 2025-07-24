@@ -27,7 +27,7 @@ const Header: React.FC = () => {
     <header className="bg-zinc-800 text-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         {/* Логотип */}
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
+        <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse group">
           {/* Замість тексту додамо зображення */}
           <Image
             src="/assets/logo.png"
@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             className="h-8 w-auto"
             priority
           />
-        </a>
+        </Link>
 
         {/* Навігація */}
         <nav className="hidden md:flex space-x-8 font-semibold">
